@@ -1,0 +1,21 @@
+<header class="barre">
+  <h1>Carto Vin</h1>
+  @if (statut()?.titre; as titre) {
+    <span class="source">Source : {{ titre }}</span>
+  }
+
+  <div class="bascule" role="group" aria-label="Fond de carte">
+    <button type="button" [class.actif]="fond() === 'plan'" (click)="fond.set('plan')">Plan</button>
+    <button type="button" [class.actif]="fond() === 'ortho'" (click)="fond.set('ortho')">Photo</button>
+  </div>
+</header>
+
+<app-map class="carte" [actif]="pret()" [fond]="fond()" (etat)="etat.set($event)" (nbParcelles)="nb.set($event)" />
+
+<footer class="statut" [class.erreur]="enErreur()">
+  <span>{{ message() }}</span>
+  <span class="legende">
+    <i style="background:#2e7d32"></i>AB <i style="background:#9ccc65"></i>C1
+    <i style="background:#7cb342"></i>C2 <i style="background:#558b2f"></i>C3
+  </span>
+</footer>

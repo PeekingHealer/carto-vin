@@ -1,0 +1,78 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+}
+
+.barre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  padding: 0.6rem 1rem;
+  background: #3b0f1e;
+  color: #fbeff2;
+
+  h1 {
+    margin: 0;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+}
+
+.source {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.bascule {
+  display: inline-flex;
+  margin-left: auto;
+  border: 1px solid #fbeff2;
+  border-radius: 4px;
+  overflow: hidden;
+
+  button {
+    padding: 0.3rem 0.8rem;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+
+    &.actif {
+      background: #fbeff2;
+      color: #3b0f1e;
+    }
+  }
+}
+
+.carte {
+  min-height: 0;
+}
+
+.statut {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  background: #f6f3f1;
+  border-top: 1px solid #ddd;
+
+  &.erreur {
+    background: #fdecea;
+    color: #8a1c1c;
+  }
+
+  .legende i {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.25rem 0 0.6rem;
+    vertical-align: -0.1rem;
+    border-radius: 2px;
+  }
+}

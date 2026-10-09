@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #222;
+}
+
+/* Popup MapLibre : le contenu est injecté hors du composant, d'où le style global. */
+.popup-parcelle {
+  font-size: 0.8rem;
+
+  strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: #1b5e20;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.15rem 0.6rem;
+    margin: 0;
+  }
+
+  dt {
+    color: #666;
+  }
+
+  dd {
+    margin: 0;
+  }
+}

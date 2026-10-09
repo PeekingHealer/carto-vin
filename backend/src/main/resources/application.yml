@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 2KB
+
+cartovin:
+  cartobio:
+    # Jeu de données "Parcelles certifiées en Agriculture Biologique sur CartoBio" (Agence Bio)
+    dataset-url: https://www.data.gouv.fr/api/1/datasets/parcelles-certifiees-en-agriculture-biologique-sur-cartobio/
+    # Fichier utilisé : le GeoPackage dont le titre contient tous ces mots (casse et accents ignorés)
+    mots-cles: [hexagonale, "2025"]
+    # Le fichier téléchargé y est conservé pour ne pas le retélécharger à chaque démarrage.
+    # Le supprimer force un nouveau téléchargement.
+    dossier-cache: ${user.home}/.cache/carto-vin
+    # Garde-fou : nombre maximum de parcelles renvoyées par requête
+    max-parcelles: 5000
